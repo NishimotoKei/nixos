@@ -112,7 +112,7 @@
     discord
     git
     mpv
-   # blender
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.blender
   ];
 
 #  home-manager = {
