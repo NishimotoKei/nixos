@@ -11,7 +11,7 @@ inputs = {
 };
 
 outputs = { self, nixpkgs, ... }@inputs: {
-	nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+	nixosConfigurations.shizueos = nixpkgs.lib.nixosSystem {
 		specialArgs = {inherit inputs;};
 		modules = [
 			./configuration.nix
