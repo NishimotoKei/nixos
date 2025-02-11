@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #inputs.home-manager.nixosModules.default	
     ];
 
   # Bootloader.
@@ -110,9 +111,17 @@
     qbittorrent
     discord
     git
+    mpv
    # blender
   ];
 
+#  home-manager = {
+#    specialArgs = { inherit inputs; };
+#    users = {
+#	"shizue" = import ./home.nix;
+#    };
+#  };
+  
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "/home/shizue/.steam/root/compatibilitytools.d";
