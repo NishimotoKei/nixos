@@ -76,9 +76,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shizue = {
     isNormalUser = true;
@@ -112,15 +109,21 @@
     discord
     git
     mpv
+    orca-slicer
+    unixtools.quota
+    telegram-desktop
+    xemu
+    appimage-run
+    p7zip    
     inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.blender
   ];
 
-#  home-manager = {
-#    specialArgs = { inherit inputs; };
-#    users = {
-#	"shizue" = import ./home.nix;
-#    };
-#  };
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+	"shizue" = import ./home.nix;
+    };
+  };
   
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
@@ -150,6 +153,10 @@
   };
   programs.gamemode.enable = true;
   programs.kdeconnect.enable = true;
+
+  virtualisation.waydroid.enable = true;
+  
+  programs.nix-ld.enable = true;
 
 
  #Lst services that you want to enable:
